@@ -15,8 +15,8 @@
 //require_once(app_path().'/vendor/php-excel-reader/excel_reader2.php');
 //require_once('http/vendor/SpreadsheetReader.php');
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/htdocs/vendor/php-excel-reader/excel_reader2.php');
-require_once($_SERVER['DOCUMENT_ROOT'].'/htdocs/vendor/SpreadsheetReader.php');
+// require_once($_SERVER['DOCUMENT_ROOT'].'/htdocs/vendor/php-excel-reader/excel_reader2.php');
+// require_once($_SERVER['DOCUMENT_ROOT'].'/htdocs/vendor/SpreadsheetReader.php');
 
 
 
@@ -27,7 +27,7 @@ $allowedFileType = ['application/vnd.ms-excel','text/xls','text/xlsx','applicati
   
   if(in_array($_FILES["file"]["type"],$allowedFileType)){
 
-        $targetPath = 'subidas/'.$_FILES['file']['name'];
+        $targetPath = $_SERVER['DOCUMENT_ROOT'].'/storage/framework/'.$_FILES['file']['name'];
         move_uploaded_file($_FILES['file']['tmp_name'], $targetPath);
         
         $Reader = new SpreadsheetReader($targetPath);
@@ -55,7 +55,7 @@ $allowedFileType = ['application/vnd.ms-excel','text/xls','text/xlsx','applicati
             <br><br>
 
             <div class="outer-container">
-              <form action="" method="get" name="frmExcelImport" id="frmExcelImport" enctype="multipart/form-data">
+              <form action="" method="GET" name="frmExcelImport" id="frmExcelImport" enctype="multipart/form-data">
                 <div>
                   <label>Elija Archivo Excel</label>
                   <br><br> 

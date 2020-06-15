@@ -47,7 +47,7 @@ class EstablecimientosController extends Controller
 			return view('establecimientos.index',compact('establecimientos'));
 		}
 		else {
-			return view('auth/login');
+			return view('carga.blade');
 		}
 		
     }
