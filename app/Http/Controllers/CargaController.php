@@ -15,6 +15,7 @@ class CargaController extends Controller
     public function index()
     {
 		//return 'Hola';
-		//return 'Hola';
+		return view('carga/cuadro');
+		dd('algo..');
     }
 }

@@ -23,6 +23,12 @@ Auth::routes();
 //CARGA DE DATOS 
 Route::get('carga', 'CargaController@index'); 
 
+
+
+
+
+
+
 //RUTA DE VISTA, UNA VEZ QUE SE ESTA LOGUEADO
 Route::get('/home', 'HomeController@index');
 
