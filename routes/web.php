@@ -21,12 +21,8 @@ Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
 Auth::routes();
 
 //CARGA DE DATOS 
-Route::get('carga', 'CargaController@index'); 
-
-
-
-
-
+Route::get('carga', 'CargaController@index');
+Route::post('importar', 'CargaController@importar');
 
 
 //RUTA DE VISTA, UNA VEZ QUE SE ESTA LOGUEADO
